@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+ - 2.5.0
+services:
+ - postgresql
+before_script:
+ - psql -c 'create database bailiff2_0_test;' -U postgres
+before_install:
+  - npm install -g jscs
+  - npm install -g csslint
+  - npm install -g jshint
+  - npm install -g eslint
+script:
+ - bundle exec rubocop
+ - bundle exec rspec
+ - bundle exec overcommit --sign
+ - bundle exec overcommit --run
