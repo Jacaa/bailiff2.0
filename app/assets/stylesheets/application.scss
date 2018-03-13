@@ -14,6 +14,7 @@
  *= require_self
  */
 @import 'bootstrap';
+@import 'ionicons';
 @import 'variables';
 
 // General styles
@@ -38,6 +39,10 @@ body {
   color: $red;
 }
 
+.c-white {
+  color: $white;
+}
+
 // Navbar
 
 .navbar {
@@ -56,4 +61,13 @@ body {
     border-width: 2px;
     letter-spacing: 2px;
   }
+}
+
+// Alerts
+
+.alerts {
+  background-color: $alerts-color;
+  position: absolute;
+  top: 72px;
+  width: 100%;
 }

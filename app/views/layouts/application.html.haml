@@ -13,4 +13,6 @@
   %body
     = render 'shared/navbar'
     = render 'shared/alerts'
-    = yield
+    .container-fluid
+      .row.full-height.bg-grey
+        = yield

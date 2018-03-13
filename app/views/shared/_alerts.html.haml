@@ -1,2 +1,5 @@
-%p.notice= notice
-%p.alert= alert
+.alerts.text-center.c-white
+  - if alert
+    = content_tag :div, class: 'alert mb-0', data: { dismiss: 'alert' } do
+      %button.close{ type: 'button', 'data-dismiss' => 'alert'} &times;
+      = alert

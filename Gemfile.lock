@@ -102,6 +102,8 @@ GEM
     faraday_middleware (0.12.2)
       faraday (>= 0.7.4, < 1.0)
     ffi (1.9.23)
+    font-ionicons-rails (2.0.1.5)
+      railties (>= 3.2, < 6.0)
     gh (0.14.0)
       addressable
       backports
@@ -352,6 +354,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker
+  font-ionicons-rails
   haml-rails (~> 1.0)
   haml_lint
   jbuilder (~> 2.5)

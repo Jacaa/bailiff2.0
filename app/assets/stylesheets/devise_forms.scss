@@ -1,0 +1,63 @@
+@import 'variables';
+
+// Forms
+
+.form-wrapper {
+  background-color: $white;
+  border: 2px solid $grey-medium;
+  width: 600px;
+}
+
+.facebook {
+  background-color: $fb-color;
+  display: inline-block;
+  text-decoration: none;
+  width: 100px;
+
+  &:hover {
+    background-color: $fb-color-light;
+  }
+
+  i {
+    color: $white;
+    font-size: 30px;
+  }
+}
+
+.grey-input {
+  padding: 10px;
+  width: 100%;
+
+  &:focus {
+    outline-color: $black;
+  }
+}
+
+.inside-lines {
+
+  h4 {
+    overflow: hidden;
+    text-align: center;
+  }
+
+  h4::before,
+  h4::after {
+    background-color: $grey-medium;
+    content: '';
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+  }
+
+  h4::before {
+    margin-left: -50%;
+    right: .5em;
+  }
+
+  h4::after {
+    left: .5em;
+    margin-right: -50%;
+  }
+}
