@@ -24,6 +24,7 @@ gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.5'
 gem 'rubocop-rails'
 gem 'sass-rails', '~> 5.0'
+gem 'scss_lint'
 gem 'travis'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
@@ -46,6 +47,7 @@ end
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 3.1'
 end

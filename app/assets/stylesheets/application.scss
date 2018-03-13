@@ -13,3 +13,47 @@
  *= require_tree .
  *= require_self
  */
+@import 'bootstrap';
+@import 'variables';
+
+// General styles
+body {
+  font-family: 'Karla', sans-serif;
+  font-size: 14px;
+}
+
+.full-height {
+  height: calc(100vh - 144px);
+}
+
+.bg-grey {
+  background-color: $grey-light;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.c-red {
+  color: $red;
+}
+
+// Navbar
+
+.navbar {
+  letter-spacing: 2px;
+
+  .navbar-brand {
+    font-size: 1.5rem;
+
+    &:hover {
+      border-bottom: 2px solid $red;
+      margin-bottom: -2px;
+    }
+  }
+
+  button {
+    border-width: 2px;
+    letter-spacing: 2px;
+  }
+}

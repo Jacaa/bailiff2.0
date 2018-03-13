@@ -1,0 +1,29 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-white.px-5.font-weight-bold
+  = link_to root_path, class: 'navbar-brand' do
+    Bailiff
+    %span.c-red 2.0
+  %button.navbar-toggler{ 'aria-controls' => 'navbar-collapse',
+                          'aria-expanded' => 'false',
+                          'aria-label' => 'Toggle navigation',
+                          'data-toggle' => 'collapse',
+                          'data-target' => '#navbar-collapse',
+                          type: 'button' }
+    %span.navbar-toggler-icon
+  .collapse.navbar-collapse#navbar-collapse
+    .navbar-nav.ml-auto
+      %button{ class: ['btn',
+                        'btn-outline-success',
+                        'mx-3',
+                        'my-2',
+                        'font-weight-bold',
+                        'text-uppercase'],
+                        type: 'button' }
+        log in
+      %button{ class: ['btn',
+                        'btn-success',
+                        'mx-3',
+                        'my-2',
+                        'font-weight-bold',
+                        'text-uppercase'],
+                        type: 'button' }
+        sign up

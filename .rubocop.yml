@@ -24,8 +24,9 @@ Documentation:
 ClassAndModuleChildren:
   Enabled: false
 
-Style/DotPosition:
-  EnforcedStyle: trailing
+Layout:
+  Style/DotPosition:
+    EnforcedStyle: trailing
 
 Rails:
   Enabled: true
