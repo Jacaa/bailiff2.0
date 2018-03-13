@@ -1,5 +1,8 @@
 {
   "name": "bailiff2_0",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1"
+  }
 }
