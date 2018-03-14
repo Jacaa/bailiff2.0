@@ -1,4 +1,4 @@
-.form-wrapper.mx-auto.my-5.p-4.text-center
+.form-wrapper.mx-auto.my-auto.p-4.text-center
   %h2 Resend confirmation instructions
   = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
     = render 'shared/error_messages', object: resource

@@ -1,4 +1,4 @@
-.form-wrapper.mx-auto.my-5.p-4.text-center
+.form-wrapper.mx-auto.my-auto.p-4.pb-0.text-center
   %h2 Forgot your password?
   = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
     = devise_error_messages!
