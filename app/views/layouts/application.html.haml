@@ -12,4 +12,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
   %body
     = render 'shared/navbar'
-    = yield
+    = render 'shared/alerts'
+    .container-fluid
+      .row.full-height.bg-grey
+        = yield

@@ -14,6 +14,7 @@
  *= require_self
  */
 @import 'bootstrap';
+@import 'ionicons';
 @import 'variables';
 
 // General styles
@@ -23,7 +24,7 @@ body {
 }
 
 .full-height {
-  height: calc(100vh - 144px);
+  min-height: calc(100vh - 144px);
 }
 
 .bg-grey {
@@ -34,14 +35,28 @@ body {
   background-color: $white;
 }
 
+.bg-alert {
+  background-color: $alerts-color;
+}
+
 .c-red {
   color: $red;
+}
+
+.c-white {
+  color: $white;
+}
+
+.img-small {
+  height: 30px;
+  width: 30px;
 }
 
 // Navbar
 
 .navbar {
   letter-spacing: 2px;
+  min-height: 72px;
 
   .navbar-brand {
     font-size: 1.5rem;
@@ -52,8 +67,39 @@ body {
     }
   }
 
+  .nav-link:hover {
+    border-bottom: 2px solid $red;
+    margin-bottom: -2px;
+  }
+
   button {
-    border-width: 2px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+  }
+
+  img {
+    margin-top: -8px;
+  }
+}
+
+// Alerts
+
+.alerts {
+  position: absolute;
+  top: 72px;
+  width: 100%;
+}
+
+// Errors
+
+.alert ul {
+  list-style: none;
+  text-align: left;
+}
+
+// Media query
+
+@media only screen and (max-width: 991px) {
+  .navbar .btn {
+    width: 100%;
   }
 }
