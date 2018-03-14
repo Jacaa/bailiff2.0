@@ -24,7 +24,7 @@ body {
 }
 
 .full-height {
-  height: calc(100vh - 144px);
+  min-height: calc(100vh - 144px);
 }
 
 .bg-grey {
@@ -35,12 +35,21 @@ body {
   background-color: $white;
 }
 
+.bg-alert {
+  background-color: $alerts-color;
+}
+
 .c-red {
   color: $red;
 }
 
 .c-white {
   color: $white;
+}
+
+.img-small {
+  height: 30px;
+  width: 30px;
 }
 
 // Navbar
@@ -57,17 +66,31 @@ body {
     }
   }
 
+  .nav-link:hover {
+    border-bottom: 2px solid $red;
+    margin-bottom: -2px;
+  }
+
   button {
-    border-width: 2px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+  }
+
+  img {
+    margin-top: -8px;
   }
 }
 
 // Alerts
 
 .alerts {
-  background-color: $alerts-color;
   position: absolute;
   top: 72px;
   width: 100%;
+}
+
+// Errors
+
+.alert ul {
+  list-style: none;
+  text-align: left;
 }

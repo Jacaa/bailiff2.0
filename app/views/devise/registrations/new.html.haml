@@ -1,4 +1,4 @@
-.form-wrapper.mx-auto.mt-5.mb-auto.p-4.text-center
+.form-wrapper.mx-auto.my-5.p-4.text-center
   %h2 Create new account using
   .oauth-wrapper.mt-3.mb-2
     = link_to '/', class: 'facebook mx-4 p-4 c-white fb-color' do
@@ -6,7 +6,7 @@
   .inside-lines
     %h4 or
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = devise_error_messages!
+    = render 'shared/error_messages', object: resource
     .field.form-group
       = f.text_field :first_name, autofocus: true, placeholder: 'First name', class: 'grey-input'
     .field.form-group
