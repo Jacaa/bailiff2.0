@@ -3,6 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  # Associations
+  it { should have_many(:debts).dependent(:destroy) }
+  it { should have_many(:credits).dependent(:destroy) }
+
   # Validations
   it { should validate_presence_of(:first_name) }
   it { should validate_presence_of(:last_name) }
@@ -13,7 +17,7 @@ RSpec.describe User, type: :model do
 
     context 'when user has an image' do
       it 'does not change current image' do
-        expect(user.image).to eq('user-avatar.png')
+        expect(user.image).to eq('no-avatar.png')
       end
     end
 

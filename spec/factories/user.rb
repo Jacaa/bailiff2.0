@@ -2,11 +2,11 @@
 
 FactoryBot.define do
   factory :user do
-    first_name            'Jacek'
-    last_name             'Mikolajczak'
-    email                 'example@example.com'
+    first_name            { Faker::Name.first_name }
+    last_name             { Faker::Name.last_name }
+    email                 { Faker::Internet.email }
     password              'password'
     password_confirmation 'password'
-    image                 'user-avatar.png'
+    image                 'no-avatar.png'
   end
 end
