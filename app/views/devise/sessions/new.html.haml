@@ -1,7 +1,7 @@
 .form-wrapper.mx-auto.my-5.p-4.text-center
   %h2 Log in using
   .oauth-wrapper.mt-3.mb-2
-    = link_to '/', class: 'facebook mx-4 p-4 c-white fb-color' do
+    = link_to user_facebook_omniauth_authorize_path, class: 'facebook mx-4 p-4 c-white fb-color' do
       %i.ion-social-facebook
   .inside-lines
     %h4 or
