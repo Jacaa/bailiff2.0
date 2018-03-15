@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources  :users, only: [:index, :show] do
     resources :debts, only: [:create]
     get '/history', to: 'debts#history'
+    put '/cover/:debt_id', to: 'debts#set_as_covered', as: 'cover'
   end
 end

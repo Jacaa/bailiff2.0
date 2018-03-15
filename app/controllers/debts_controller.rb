@@ -2,6 +2,7 @@
 
 class DebtsController < ApplicationController
   before_action :set_user
+  before_action :set_debt, only: [:set_as_covered]
 
   def create
     @debt = Debt.new(debt_params)
@@ -17,6 +18,12 @@ class DebtsController < ApplicationController
     @credits_history = @user.credits.covered.with_debtor(current_user.id)
   end
 
+  def set_as_covered
+    @debt.update_attributes(paid: true)
+    UserMailer.send_notification(@user, @debt).deliver_now
+    redirect_to root_path
+  end
+
   private
 
   def debt_params
@@ -26,6 +33,10 @@ class DebtsController < ApplicationController
 
   def set_user
     @user = User.find(params[:user_id])
+  end
+
+  def set_debt
+    @debt = Debt.find(params[:debt_id])
   end
 
   def creditor
