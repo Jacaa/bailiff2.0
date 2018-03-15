@@ -1,5 +1,4 @@
-.container-fluid
-  .row.full-height.bg-grey
-    %h1.text-center.mx-auto.my-auto
-      Keep your debts
-      .c-red.font-weight-bold.text-uppercase under control!
+- if user_signed_in?
+  = render 'dashboard'
+- else
+  = render 'landing_page'

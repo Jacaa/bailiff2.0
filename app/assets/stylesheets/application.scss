@@ -39,6 +39,10 @@ body {
   background-color: $alerts-color;
 }
 
+.bg-red {
+  background-color: $red;
+}
+
 .c-red {
   color: $red;
 }
@@ -47,9 +51,18 @@ body {
   color: $white;
 }
 
+.c-green {
+  color: $green;
+}
+
 .img-small {
   height: 30px;
   width: 30px;
+}
+
+.img-medium {
+  height: 65px;
+  width: 65px;
 }
 
 .img-big {
@@ -57,6 +70,14 @@ body {
   width: 100px;
 }
 
+.borders-grey {
+  border: 2px solid $grey-medium;
+}
+
+label {
+  margin-bottom: 0;
+  margin-top: .4rem;
+}
 // Navbar
 
 .navbar {
@@ -92,6 +113,7 @@ body {
   position: absolute;
   top: 72px;
   width: 100%;
+  z-index: 999;
 }
 
 // Errors

@@ -1,0 +1,7 @@
+= form_tag(users_path) do
+  .input-group
+    .col-9
+      = text_field_tag :query, nil, class: 'grey-input',
+                                    placeholder: 'Write a name...'
+    .col-3
+      = submit_tag 'Search', class: 'btn btn-success'

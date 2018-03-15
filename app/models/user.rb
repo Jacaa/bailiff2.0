@@ -7,6 +7,16 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable,
          omniauth_providers: %i[facebook]
 
+  has_many :debts,   class_name: 'Debt',
+                     foreign_key: 'debtor_id',
+                     dependent: :destroy,
+                     inverse_of: :debtor
+
+  has_many :credits, class_name: 'Debt',
+                     foreign_key: 'creditor_id',
+                     dependent: :destroy,
+                     inverse_of: :creditor
+
   before_save :set_default_image
 
   def self.from_omniauth(auth)

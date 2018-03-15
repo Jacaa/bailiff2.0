@@ -1,0 +1,15 @@
+.row
+  .col-3.offset-md-1
+    .text-center
+      .image.p-1.pt-2
+        = image_tag @user.image, class: 'rounded-circle img-medium'
+      .info.p-1
+        %h4.c-red
+          = @user.first_name
+          = @user.last_name
+        = @user.email
+    = render 'debts/new', debt: @debt, user: @user
+  .col-8
+    %h3.text-center
+      = @user.first_name
+      activity
