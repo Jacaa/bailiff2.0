@@ -8,7 +8,7 @@
         = object[user].last_name
       .col
         = object[type].amount
-      - if type.to_s == 'debt'
+      - if type.to_s == 'debt' && object[user] != current_user
         .col
           = link_to 'Set as covered', user_cover_path(object[user], object[type]), class: 'btn btn-info btn-sm', method: :put
     .row
