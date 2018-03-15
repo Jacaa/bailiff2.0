@@ -9,6 +9,12 @@ class Debt < ApplicationRecord
   validates :amount,  presence: true, numericality: { greater_than: 0 }
   validate  :deadline_is_possible?
 
+  default_scope -> { order(created_at: :desc) }
+  scope :covered, -> { where('paid = ?', true) }
+  scope :no_covered, -> { where('paid = ?', false) }
+  scope :with_debtor, ->(id) { where('debtor_id = ?', id) }
+  scope :with_creditor, ->(id) { where('creditor_id = ?', id) }
+
   private
 
   def deadline_is_possible?
