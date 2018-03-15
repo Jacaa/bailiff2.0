@@ -5,8 +5,8 @@ class Debt < ApplicationRecord
   belongs_to :debtor,   class_name: 'User', inverse_of: :debts
   belongs_to :creditor, class_name: 'User', inverse_of: :credits
 
-  validates :amount,  presence: true, numericality: { greater_than: 0 }
   validates :purpose, presence: true, length: { maximum: 200 }
+  validates :amount,  presence: true, numericality: { greater_than: 0 }
   validate  :deadline_is_possible?
 
   private
