@@ -1,0 +1,16 @@
+%div{ class: "#{type.to_s}" }
+  .container
+    .row
+      .col
+        = image_tag object[user].image, class: 'rounded-circle img-small'
+      .col
+        = object[user].first_name
+        = object[user].last_name
+      .col
+        = object[type].amount
+      - if type.to_s == 'debt'
+        .col
+          = link_to 'Set as paid', '/', class: 'btn btn-info btn-sm'
+    .row
+      .col
+        = object[type].purpose

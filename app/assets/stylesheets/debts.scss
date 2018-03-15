@@ -1,0 +1,13 @@
+@import 'variables';
+
+.debt,
+.credit {
+  border: 1px solid $red;
+  margin: 10px auto;
+  max-width: 400px;
+  padding: 15px 30px;
+}
+
+.credit {
+  border: 1px solid $green;
+}
