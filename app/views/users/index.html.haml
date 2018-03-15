@@ -6,4 +6,4 @@
   %h3
     or pick someone from the list below:
   - @users.each do |user|
-    = render user
+    = render user if current_user != user

@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources  :users, only: [:index, :show] do
     resources :debts, only: [:create]
+    get '/history', to: 'debts#history'
   end
 end

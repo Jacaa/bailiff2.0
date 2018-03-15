@@ -12,10 +12,15 @@ class DebtsController < ApplicationController
     end
   end
 
+  def history
+    @debts_history   = @user.debts.covered.with_creditor(current_user.id)
+    @credits_history = @user.credits.covered.with_debtor(current_user.id)
+  end
+
   private
 
   def debt_params
-    params.require(:debt).permit(:purpose, :amount, :date, :deadline)
+    params.require(:debt).permit(:purpose, :amount, :date, :deadline, :paid)
           .merge(creditor_id: creditor, debtor_id: debtor)
   end
 

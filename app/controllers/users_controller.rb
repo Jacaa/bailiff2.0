@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @debt = Debt.new
+    @debt      = Debt.new
+    @dashboard = DashboardViewObject.new(@user)
   end
 
   private
