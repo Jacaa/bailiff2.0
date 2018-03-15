@@ -1,0 +1,9 @@
+.text-center.users
+  %h3
+    Search a user
+  .search
+    = render 'search'
+  %h3
+    or pick someone from the list below:
+  - @users.each do |user|
+    = render user

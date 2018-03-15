@@ -1,9 +1,7 @@
 .container-fluid.bg-white
   .row.bg-grey
-    .col.py-5.px-5
+    .col-4.py-5.px-5
       %h3 Dashboard
-    .col.text-center.py-5.border-left.border-right
-      %h6 My debts stats
-    .col.text-right.py-5.px-5
-      = link_to 'Define new debt', '/', class: 'btn btn-success'
+    .col-8.text-center.py-5.px-5.border-left
+      = link_to 'Define new debt', users_path, class: 'btn btn-success'
   .row
