@@ -11,5 +11,4 @@
   = paginate @users, outer_window: 3
   .row.users.text-center
     - @users.each do |user|
-      .col-6
-        = render user if current_user != user
+      = render user if current_user != user

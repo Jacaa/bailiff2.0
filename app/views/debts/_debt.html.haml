@@ -9,7 +9,7 @@
       %td.font-weight-bold.align-middle
         = object[type].amount
       %td
-        - if type.to_s == 'debt' && object[user] != current_user && !object[type].paid
+        - if type.to_s == 'debt' && (object[type].debtor == current_user) && !object[type].paid
           = link_to 'Set as covered', user_cover_path(object[user], object[type]), class: 'btn btn-info btn-sm', method: :put
     %tr
       %td{colspan: '4'}= object[type].purpose
