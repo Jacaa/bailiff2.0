@@ -2,7 +2,7 @@
   .row
     .col
       %h4.c-red.font-weight-bold.text-center.my-3.border-bottom
-        - if @user != current_user
+        - if not_current_user(@user)
           = @user.first_name
           historical debts with me
         - else
@@ -15,7 +15,7 @@
           = render 'debts/debt', object: debt, user: :creditor, type: :debt
     .col
       %h4.c-green.font-weight-bold.text-center.my-3.border-bottom
-        - if @user != current_user
+        - if not_current_user(@user)
           = @user.first_name
           historical credits with me
         - else
