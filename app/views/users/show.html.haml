@@ -7,12 +7,12 @@
           = @user.first_name
           = @user.last_name
         .font-italic= @user.email
-        - if @user != current_user
+        - if not_current_user(@user)
           = render 'debts/new', debt: @debt, user: @user
         - else
           .mt-3= link_to 'Create a new debt', users_path, class: 'btn btn-secondary'
     .col-9
-      - if @user != current_user
+      - if not_current_user(@user)
         .my-3.text-center= link_to 'History of transactions', user_history_path(@user), class: 'btn btn-secondary'
         .row
           .col
