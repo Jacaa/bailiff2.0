@@ -1,7 +1,10 @@
 .container-fluid.bg-grey
   .container
-    .col-3.offset-4.text-center.py-3
-      = render 'search'
+    .row
+      .col-4.offset-4.text-center.py-3
+        .mb-3= link_to 'All users', users_path, class: 'btn btn-info'
+        %h5.text-center.font-weight-bold Search a user
+        = render 'search'
 .container
   %h5.text-center.border-bottom.font-weight-bold.my-4.pb-2
     or just pick someone from the list below
