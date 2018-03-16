@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   before_action :current_user?
 
   def index
+    return @users = User.search_by_full_name(params[:query]) if params[:query]
     @users = User.all
   end
 

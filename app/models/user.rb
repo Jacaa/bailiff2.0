@@ -2,6 +2,10 @@
 
 # :nodoc
 class User < ApplicationRecord
+  include PgSearch
+  pg_search_scope :search_by_full_name, against: %i[first_name last_name],
+                                        using: { tsearch: { prefix: true } }
+
   validates :first_name, :last_name, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable,
