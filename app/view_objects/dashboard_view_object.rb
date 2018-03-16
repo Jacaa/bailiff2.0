@@ -33,4 +33,12 @@ class DashboardViewObject
                          debtor: User.find(credit.debtor_id) }
     end
   end
+
+  def sum_of_debts
+    @user.debts.no_covered.sum(:amount)
+  end
+
+  def sum_of_credits
+    @user.credits.no_covered.sum(:amount)
+  end
 end

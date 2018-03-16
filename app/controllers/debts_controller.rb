@@ -9,7 +9,7 @@ class DebtsController < ApplicationController
     @debt = Debt.new(debt_params)
     @dashboard = DashboardViewObject.new(@user)
     if @debt.save
-      redirect_to root_path, notice: 'New loan/debt has been added'
+      redirect_to root_path, notice: 'New debt has been added'
     else
       render 'users/show'
     end
