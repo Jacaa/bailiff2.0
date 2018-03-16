@@ -6,6 +6,7 @@ class DebtsController < ApplicationController
 
   def create
     @debt = Debt.new(debt_params)
+    @dashboard = DashboardViewObject.new(@user)
     if @debt.save
       redirect_to root_path, notice: 'New loan/debt has been added'
     else
@@ -14,8 +15,7 @@ class DebtsController < ApplicationController
   end
 
   def history
-    @debts_history   = @user.debts.covered.with_creditor(current_user.id)
-    @credits_history = @user.credits.covered.with_debtor(current_user.id)
+    @dashboard = DashboardViewObject.new(@user)
   end
 
   def set_as_covered

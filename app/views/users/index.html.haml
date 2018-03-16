@@ -1,9 +1,11 @@
-.text-center.users
-  %h3
-    Search a user
-  .search
-    = render 'search'
-  %h3
-    or pick someone from the list below:
-  - @users.each do |user|
-    = render user if current_user != user
+.container-fluid.bg-grey
+  .container
+    .col-3.offset-4.text-center.py-3
+      = render 'search'
+.container
+  %h5.text-center.border-bottom.font-weight-bold.my-4.pb-2
+    or just pick someone from the list below
+  .row.users.text-center
+    - @users.each do |user|
+      .col-6
+        = render user if current_user != user

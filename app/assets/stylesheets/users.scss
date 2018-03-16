@@ -1,30 +1,17 @@
 @import 'variables';
 
-.users {
-  padding-top: 20px;
+.users .user-info {
+  background-color: $white;
+  border: 2px solid $grey-medium;
+  color: inherit;
+  display: inline-block;
+  font-size: 1.25rem;
+  margin: 15px;
+  width: 300px;
 
-  .user-info {
-    background-color: $white;
-    border: 2px solid $grey-medium;
+  &:hover {
+    border: 2px solid $black;
     color: inherit;
-    display: inline-block;
-    font-size: 1.25rem;
-    margin: 15px;
-    width: 300px;
-
-    &:hover {
-      border: 2px solid $black;
-      color: inherit;
-      text-decoration-color: $red;
-    }
-  }
-
-  .search {
-    margin: 15px auto;
-    width: 300px;
-
-    .btn {
-      margin-bottom: -20px;
-    }
+    text-decoration-color: $red;
   }
 }

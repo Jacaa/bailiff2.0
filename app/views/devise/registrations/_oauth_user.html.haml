@@ -4,6 +4,5 @@
     = OmniAuth::Utils.camelize(provider)
 = image_tag current_user.image, class: 'rounded-circle img-big'
 %h6.mb-4
-  %span.c-red Name:
   = current_user.first_name
   = current_user.last_name
