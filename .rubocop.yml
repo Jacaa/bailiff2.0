@@ -12,6 +12,8 @@ AllCops:
     - tmp/**/*
     - vendor/**/*
     - spec/models/*
+    - spec/controllers/debts_controller_spec.rb
+    - spec/controllers/users_controller_spec.rb
 MethodCalledOnDoEndBlock:
   Enabled: true
 
