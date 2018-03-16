@@ -27,4 +27,13 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe '-> default scope' do
+    let(:user_one) { create(:user, last_name: 'Aha') }
+    let(:user_two) { create(:user, last_name: 'Ehe') }
+
+    it 'returns user in alphabetical order by last name' do
+      expect(User.all).to eq([user_one, user_two])
+    end
+  end
 end

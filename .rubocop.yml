@@ -11,7 +11,7 @@ AllCops:
     - script/**/*
     - tmp/**/*
     - vendor/**/*
-
+    - spec/models/*
 MethodCalledOnDoEndBlock:
   Enabled: true
 

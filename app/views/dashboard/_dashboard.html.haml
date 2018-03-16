@@ -7,7 +7,8 @@
   .container
     .row
       .col
-        %h4.c-red.font-weight-bold.text-center.my-3.border-bottom Active debts
+        %h4.c-red.font-weight-bold.text-center.my-3.border-bottom
+          My active debts
         - if @dashboard.user_active_debts.blank?
           %h5.text-center.font-italic
             no debts
@@ -16,7 +17,7 @@
             = render 'debts/debt', object: debt, user: :creditor, type: :debt
       .col
         %h4.c-green.font-weight-bold.text-center.my-3.border-bottom
-          Active credits
+          My active credits
         - if @dashboard.user_active_credits.blank?
           %h5.text-center.font-italic
             no credits
