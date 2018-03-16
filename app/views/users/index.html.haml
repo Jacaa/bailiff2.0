@@ -8,6 +8,7 @@
 .container
   %h5.text-center.border-bottom.font-weight-bold.my-4.pb-2
     or just pick someone from the list below
+  = paginate @users, outer_window: 3
   .row.users.text-center
     - @users.each do |user|
       .col-6

@@ -18,6 +18,7 @@ gem 'haml-rails', '~> 1.0'
 gem 'haml_lint', require: false
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem 'kaminari'
 gem 'omniauth-facebook'
 gem 'overcommit'
 gem 'pg', '>= 0.18', '< 2.0'

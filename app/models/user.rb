@@ -3,8 +3,8 @@
 # :nodoc
 class User < ApplicationRecord
   include PgSearch
-  pg_search_scope :search_by_full_name, against: %i[first_name last_name],
-                                        using: { tsearch: { prefix: true } }
+  pg_search_scope :by_full_name, against: %i[first_name last_name],
+                                 using: { tsearch: { prefix: true } }
 
   validates :first_name, :last_name, presence: true
   devise :database_authenticatable, :registerable,
@@ -22,6 +22,10 @@ class User < ApplicationRecord
                      inverse_of: :creditor
 
   before_save :set_default_image
+
+  paginates_per 4
+
+  default_scope -> { order(last_name: :asc) }
 
   def self.from_omniauth(auth)
     where(provider: auth[:provider], uid: auth[:uid]).first_or_create do |user|

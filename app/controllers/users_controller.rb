@@ -6,8 +6,10 @@ class UsersController < ApplicationController
   before_action :current_user?
 
   def index
-    return @users = User.search_by_full_name(params[:query]) if params[:query]
-    @users = User.all
+    query = params[:query]
+    page  = params[:page]
+    return @users = User.by_full_name(query).page(page) if params[:query]
+    @users = User.all.page(params[:page])
   end
 
   def show
