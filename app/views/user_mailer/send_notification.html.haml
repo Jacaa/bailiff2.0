@@ -1,0 +1,17 @@
+%h2 Bailiff2.0
+%h3
+  Hello
+  = @user.email
+%h3
+  We have good news!
+%h4
+  = @debt.debtor.email
+  has just covered a debt:
+%p
+  = @debt.purpose
+%p
+  Amount:
+  = @debt.amount
+%p
+  Date of the debt:
+  = @debt.date if @debt.date
