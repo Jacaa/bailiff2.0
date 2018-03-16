@@ -9,13 +9,13 @@
         .font-italic= @user.email
         %h6.c-red.mt-3
           Active
-          .font-weight-bold= @dashboard.user_active_debts.count
-          debts - amount
+          .font-weight-bold= pluralize(@dashboard.user_active_debts.count, 'debt')
+          Total amount
           = @dashboard.sum_of_debts
         %h6.c-green.mt-3
           Active
-          .font-weight-bold= @dashboard.user_active_credits.count
-          credits - amount
+          .font-weight-bold= pluralize(@dashboard.user_active_credits.count, 'credit')
+          Total amount
           = @dashboard.sum_of_credits
         - if not_current_user(@user)
           = render 'debts/new', debt: @debt, user: @user
