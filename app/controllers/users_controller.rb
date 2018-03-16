@@ -1,11 +1,15 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_user, only: [:show]
   before_action :current_user?
 
   def index
-    @users = User.all
+    query = params[:query]
+    page  = params[:page]
+    return @users = User.by_full_name(query).page(page) if params[:query]
+    @users = User.all.page(params[:page])
   end
 
   def show
