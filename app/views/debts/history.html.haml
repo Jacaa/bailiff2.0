@@ -1,16 +1,1 @@
-%h3.text-center
-  History of transactions with
-  = @user.first_name
-.row.bg-white
-  .col
-    %h4.c-red Debts
-    - @debts_history.each do |debt|
-      .debt
-        = debt.purpose
-        = debt.amount
-  .col
-    %h4.c-green Credits
-    - @credits_history.each do |credit|
-      .credit
-        = credit.purpose
-        = credit.amount
+= render 'history'

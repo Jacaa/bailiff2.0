@@ -111,7 +111,7 @@ label {
 
 .alerts {
   position: absolute;
-  top: 72px;
+  top: calc(100vh - 47px);
   width: 100%;
   z-index: 999;
 }

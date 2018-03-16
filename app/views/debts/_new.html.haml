@@ -1,25 +1,24 @@
-.borders-grey.bg-white.p-4
-  %h5.text-center.c-red Define a new debt
-  = form_for(debt, url: user_debts_path(user)) do |f|
+%h5.c-red.font-weight-bold.border-top.mt-3.pt-4#new-debt Create a new debt
+#new-debt-form
+  = form_for(debt, url: user_create_debt_path(user)) do |f|
     = render 'shared/error_messages', object: debt
-    %h5 Select type
-    .field
-      "You owed #{user.first_name.capitalize}"
+    %h5 Specify the relationship:
+    .field.text-left
       = radio_button_tag :creditor, true, checked: true
-    .field
-      "You borrowed money to #{user.first_name.capitalize}"
+      = label_tag :creditor, "You owe #{user.first_name.capitalize}", for: 'creditor_true'
+    .field.text-left
       = radio_button_tag :creditor, false
-    %br
-    .field
+      = label_tag :creditor, "You borrowed money to #{user.first_name.capitalize}", for: 'creditor_false'
+    .field.text-left
       = f.label :purpose, '* Purpose:'
       = f.text_field :purpose, class: 'grey-input',
-                               placeholder: 'Write a few words about the debt'
-    .field.w-50
+                                placeholder: 'Write a few words about the debt'
+    .field.w-50.text-left
       = f.label :amount, '* Amount:'
       = f.number_field :amount, class: 'grey-input', value: 0, step: 0.01
-    .field
-      = f.label :paid, ' Debt is already covered'
+    .field.text-left
       = f.check_box :paid
+      = f.label :paid, ' Debt is already covered'
     %br
     .text-center
       = f.submit 'Create!', class: 'btn btn-success'

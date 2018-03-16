@@ -1,0 +1,26 @@
+.container
+  .row
+    .col
+      %h4.c-red.font-weight-bold.text-center.my-3.border-bottom
+        My historical debts
+        - if @user != current_user
+          with
+          = @user.first_name
+      - if @dashboard.user_historical_debts.blank?
+        %h5.text-center.font-italic
+          no debts
+      - else
+        - @dashboard.user_historical_debts.each_value do |debt|
+          = render 'debts/debt', object: debt, user: :creditor, type: :debt
+    .col
+      %h4.c-green.font-weight-bold.text-center.my-3.border-bottom
+        My historical credits
+        - if @user != current_user
+          with
+          = @user.first_name
+      - if @dashboard.user_historical_credits.blank?
+        %h5.text-center.font-italic
+          no credits
+      - else
+        - @dashboard.user_historical_credits.each_value do |credit|
+          = render 'debts/debt', object: credit, user: :debtor, type: :credit

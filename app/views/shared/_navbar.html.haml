@@ -10,16 +10,22 @@
                           type: 'button' }
     %span.navbar-toggler-icon
   .collapse.navbar-collapse#navbar-collapse
-    .navbar-nav.ml-auto
-      - if user_signed_in?
-        = link_to edit_user_registration_path(current_user),
-          class: 'nav-item nav-link' do
+    - if user_signed_in?
+      .navbar-nav.mr-auto
+        = link_to 'All users', users_path, class: 'nav-item nav-link'
+      .navbar-nav.mx-auto
+        = link_to 'Dashboard', root_path, class: 'nav-item nav-link'
+      .navbar-nav.ml-auto
+        = link_to current_user, class: 'nav-item nav-link' do
           = image_tag current_user.image, class: 'rounded-circle img-small'
           = current_user.first_name
           = current_user.last_name
+        = link_to 'Settings', edit_user_registration_path(current_user),
+          class: 'nav-item nav-link'
         = link_to 'Log out', destroy_user_session_path, method: :delete,
           class: 'nav-item nav-link'
-      - else
+    - else
+      .navbar-nav.ml-auto
         = link_to new_user_session_path do
           %button{ class: ['btn',
                           'btn-outline-success',

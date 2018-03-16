@@ -1,16 +1,16 @@
 %div{ class: "#{type.to_s}" }
-  .container
-    .row
-      .col
-        = image_tag object[user].image, class: 'rounded-circle img-small'
-      .col
-        = object[user].first_name
-        = object[user].last_name
-      .col
+  %table.w-100.text-center.table.mb-0
+    %tr
+      %td= image_tag object[user].image, class: 'rounded-circle img-small'
+      %td.font-weight-bold.align-middle
+        = link_to object[user] do
+          = object[user].first_name
+          = object[user].last_name
+      %td.font-weight-bold.align-middle
         = object[type].amount
-      - if type.to_s == 'debt' && object[user] != current_user
-        .col
+      %td
+        - if type.to_s == 'debt' && object[user] != current_user && !object[type].paid
           = link_to 'Set as covered', user_cover_path(object[user], object[type]), class: 'btn btn-info btn-sm', method: :put
-    .row
-      .col
-        = object[type].purpose
+    %tr
+      %td{colspan: '4'}= object[type].purpose
+
